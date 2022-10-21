@@ -1,5 +1,6 @@
 window._ = require('lodash');
-
+window.$ = window.jQuery = require('jquery');
+window.Highcharts = require('highcharts');  
 try {
     require('bootstrap');
 } catch (e) {}
@@ -30,3 +31,4 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+window.$ = window.jQuery = require('jquery')

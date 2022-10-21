@@ -19,5 +19,10 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1"
+    },
+    "dependencies": {
+        "highcharts": "^10.2.1",
+        "jquery": "^3.6.1",
+        "leaflet": "^1.9.2"
     }
 }

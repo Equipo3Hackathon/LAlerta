@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Airtable;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $alertas = Airtable::table('alertas')->get();
+        $periodistas = Airtable::table('perfil')->get();
+        return view('home', [
+            "num_alertas" => count($alertas), 
+            "num_periodistas" => count($periodistas)
+        ]);
     }
 }

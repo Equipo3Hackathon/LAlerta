@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/sms', function () {
     return [];
 });
 
+
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/api/alerts', [App\Http\Controllers\AirTableController::class, 'index'])->name('airtable.index');
+Route::get('/api/types', [App\Http\Controllers\AirTableController::class, 'types'])->name('airtable.types');
