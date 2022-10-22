@@ -9,7 +9,8 @@ class SMSController extends Controller
 {
     public function index(Request $request)
     {
-        Log::info($request);
+        log::info($request->all());
+        //Log::info($request);
         return 'hi';
     }
 }
