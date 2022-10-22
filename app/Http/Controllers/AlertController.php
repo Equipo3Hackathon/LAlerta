@@ -31,7 +31,8 @@ class AlertController extends Controller
             'Perfil' => ['rec4w7CQN1vZNtlEo'],
             'Contactos' => ['recs6anTSWvsW3p9Q', 'reclIIAwI6hmdaBmo'],
         );*/
-        log::info($data);
+        log::info($data['Contactos']);
+        return 'OK';
         $contactos_ids = $data['Contactos'];
         foreach($contactos_ids as $id){
             $contacto = Airtable::table('contactos')->find($id);
