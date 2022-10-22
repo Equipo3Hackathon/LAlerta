@@ -31,6 +31,8 @@ class AlertController extends Controller
             'Perfil' => ['rec4w7CQN1vZNtlEo'],
             'Contactos' => ['recs6anTSWvsW3p9Q', 'reclIIAwI6hmdaBmo'],
         );*/
+        log::info($data);
+        return "OK";
         log::info($data['Contactos']);
         $contactos_ids = $data['Contactos'];
         $contactos_ids = str_replace("['","", $contactos_ids);
@@ -53,7 +55,7 @@ class AlertController extends Controller
             
 
             $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
-                'from' => 'whatsapp:+14155238886', 
+                'from' => 'whatsapp:' . $twilio_number, 
                 'body' => $body
             ]);
         }
