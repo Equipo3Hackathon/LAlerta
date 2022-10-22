@@ -32,9 +32,9 @@ class AlertController extends Controller
             'Contactos' => ['recs6anTSWvsW3p9Q', 'reclIIAwI6hmdaBmo'],
         );*/
         log::info($data['Contactos']);
-        return 'OK';
         $contactos_ids = $data['Contactos'];
         foreach($contactos_ids as $id){
+            log::info($id);
             $contacto = Airtable::table('contactos')->find($id);
             //var_dump($contacto["fields"]['Telefono']);
             $client = new Client($account_sid, $auth_token);
