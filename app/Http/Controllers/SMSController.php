@@ -12,9 +12,9 @@ class SMSController extends Controller
     {
         $data = $request->all();
         log::info($data);
-        //$body = explode(';',$data['Body']);
-        $body = ['0','jolly-approval-537@anonymous.appuser.io','2','3','4'];
-        $data['From'] = '222';
+        $body = explode(';',$data['Body']);
+        //$body = ['0','jolly-approval-537@anonymous.appuser.io','2','3','4'];
+        //$data['From'] = '222';
         $perfil = Airtable::table('perfil')->where('Email', $body[1])->get();
         $r = Airtable::table('alertas')->firstOrCreate([
             'Name' => $body[0],
