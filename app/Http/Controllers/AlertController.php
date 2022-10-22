@@ -33,18 +33,11 @@ class AlertController extends Controller
         );*/
         log::info($data);
         log::info($data['image_url']);
-        $image = $data['image_url'];
-        log::info($image);
-        log::info(gettype($image));
-        //log::info($image[0]->url);
-        return "OK";
-        log::info($data['Contactos']);
-        $contactos_ids = $data['Contactos'];
-        $contactos_ids = str_replace("['","", $contactos_ids);
-        $contactos_ids = str_replace("']","", $contactos_ids);
-        $contactos_ids = str_replace("'","", $contactos_ids);
-        $contactos_ids = str_replace(" ","", $contactos_ids);
-        $contactos_ids = explode(',',$contactos_ids);
+        log::info($data['contactos']);
+        $contactos = $data['contactos'];
+        $image_url = $data['image_url'];
+
+        $contactos_ids = explode(',',$contactos);
         foreach($contactos_ids as $id){
             log::info($id);
             $contacto = Airtable::table('contactos')->find($id);
@@ -61,7 +54,8 @@ class AlertController extends Controller
 
             $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
                 'from' => 'whatsapp:' . $twilio_number, 
-                'body' => $body
+                'body' => $body,
+                'mediaUrl' => [$image_url]
             ]);
         }
         //return $contactos;
