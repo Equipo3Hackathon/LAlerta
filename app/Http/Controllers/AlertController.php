@@ -36,6 +36,11 @@ class AlertController extends Controller
         log::info($data['contactos']);
         $contactos = $data['contactos'];
         $image_url = $data['image_url'];
+        $name = $data['name'];
+        $notas = $data['notas'];
+        $telefono = $data['telefono'];
+        $fecha = $data['fecha'];
+        $geo = $data['geo'];
 
         $contactos_ids = explode(',',$contactos);
         foreach($contactos_ids as $id){
@@ -44,12 +49,12 @@ class AlertController extends Controller
             //var_dump($contacto["fields"]['Telefono']);
             $client = new Client($account_sid, $auth_token);
             $body = "Nueva Alerta\n";
-            $body .= "Nombre: " . $data['Name'] . "\n";
-            $body .= "Nota: " . $data['Notas'] . "\n";
-            $body .= "Teléfono: " . $data['Teléfono'] . "\n";
-            $body .= "Fecha: " . $data['Fecha'] . "\n";
-            $body .= "Posición: http://www.google.com/maps/place/" . $data['Geoposicion'] . "\n";
-            $body .= "Whatsapp: http://wa.me/" . $data['Teléfono'] . "\n";
+            $body .= "Nombre: " . $name . "\n";
+            $body .= "Nota: " . $notas . "\n";
+            $body .= "Teléfono: " . $telefono . "\n";
+            $body .= "Fecha: " . $fecha . "\n";
+            $body .= "Posición: http://www.google.com/maps/place/" . $geo . "\n";
+            $body .= "Whatsapp: http://wa.me/" . $telefono  . "\n";
             
 
             $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
