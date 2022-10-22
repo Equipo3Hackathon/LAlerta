@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Log;
 
 class SMSController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        Log::info('hi');
+        Log::info($request);
         return 'hi';
     }
 }

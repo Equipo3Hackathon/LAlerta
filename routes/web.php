@@ -21,7 +21,7 @@ Route::get('/sms', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/sms', [App\Http\Controllers\SMSController::class, 'index'])->name('sms.index');
+Route::any('/sms', [App\Http\Controllers\SMSController::class, 'index'])->name('sms.index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/api/alerts', [App\Http\Controllers\AirTableController::class, 'index'])->name('airtable.index');
 Route::get('/api/types', [App\Http\Controllers\AirTableController::class, 'types'])->name('airtable.types');
