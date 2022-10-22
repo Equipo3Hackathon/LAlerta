@@ -57,6 +57,10 @@ return [
             'name' => 'Tipo de Amenazas',
         ],
 
+        'contactos' => [
+            'name' => 'Contactos',
+        ],
+
     ],
 
     /*
