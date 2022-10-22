@@ -12,7 +12,10 @@ class SMSController extends Controller
     {
         $data = $request->all();
         log::info($data);
-        $body = explode(';',$data['Body']);
+        //$body = explode(';',$data['Body']);
+        $body = ['0','jolly-approval-537@anonymous.appuser.io','2','3','4'];
+        $data['From'] = '222';
+        $perfil = Airtable::table('perfil')->where('Email', $body[1])->get();
         $r = Airtable::table('alertas')->firstOrCreate([
             'Name' => $body[0],
             'Email' => $body[1],
@@ -20,7 +23,8 @@ class SMSController extends Controller
             'Notas' => $body[4],
             'Teléfono' => $data['From'],
             'Municipio' => $body[3],
-            'Tipo de Amenazas' => 'rec9S8Hx3GfXPLofR'
+            'Tipo de Amenazas' => 'rec9S8Hx3GfXPLofR',
+            'Perfil' => $perfil[0]['id']
         ]);
         return 'OK';
     }

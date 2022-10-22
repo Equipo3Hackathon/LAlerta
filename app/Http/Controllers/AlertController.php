@@ -16,26 +16,13 @@ class AlertController extends Controller
         $twilio_number = getenv("TWILIO_NUMBER");
         
         $data = $request->all();
-        /*$data = array (
-            'Email' => 'andres@winguweb.org',
-             'Fecha' => '2022-10-22T17:56:34.000Z',
-             'Geoposicion' => '4.6583644,-74.0564189',
-             'Municipio' => 'Cundinamarca',
-            'Name' => 'Andres Felipe Trujillo',
-             'Name (from Tipo de Amenazas)' => '[\'Abuso de poder\']',
-             'Notas' => 'Amenaza',
-             'Teléfono' => '+573184773493',
-             'Tipo de Amenazas' => '[\'recmkFiTXjePGQ2ed\']',
-             '_createdTime' => '2022-10-22T17:56:34.000Z',
-            'id' => 'recqP5wXqzxmcWoWG',
-            'Perfil' => ['rec4w7CQN1vZNtlEo'],
-            'Contactos' => ['recs6anTSWvsW3p9Q', 'reclIIAwI6hmdaBmo'],
-        );*/
-        log::info($data);
+        /*log::info($data);
         log::info($data['image_url']);
-        log::info($data['contactos']);
+        log::info($data['contactos']);*/
         $contactos = $data['contactos'];
-        $image_url = $data['image_url'];
+        if(isset($data['image_url'])){
+            $image_url = $data['image_url'];
+        }
         $name = $data['name'];
         $notas = $data['notas'];
         $telefono = $data['telefono'];
@@ -56,12 +43,18 @@ class AlertController extends Controller
             $body .= "Posición: http://www.google.com/maps/place/" . $geo . "\n";
             $body .= "Whatsapp: http://wa.me/" . $telefono  . "\n";
             
-
-            $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
-                'from' => 'whatsapp:+14155238886', 
-                'body' => $body,
-                'mediaUrl' => [$image_url]
-            ]);
+            if(isset($data['image_url'])){
+                $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
+                    'from' => 'whatsapp:+14155238886', 
+                    'body' => $body,
+                    'mediaUrl' => [$image_url]
+                ]);
+            }else{
+                $client->messages->create('whatsapp:' . $contacto["fields"]['Telefono'], [
+                    'from' => 'whatsapp:+14155238886', 
+                    'body' => $body
+                ]);
+            }
         }
         //return $contactos;
         return 'OK';
