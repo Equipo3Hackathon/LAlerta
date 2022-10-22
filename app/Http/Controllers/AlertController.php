@@ -33,7 +33,7 @@ class AlertController extends Controller
         );*/
         log::info($data);
         log::info($data['Image']);
-        $image = json_decode($data['Image'], JSON_UNESCAPED_SLASHES);
+        $image = json_decode($data['Image']);
         log::info($image);
         log::info(gettype($image));
         //log::info($image[0]->url);
