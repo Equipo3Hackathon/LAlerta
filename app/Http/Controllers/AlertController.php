@@ -32,8 +32,8 @@ class AlertController extends Controller
             'Contactos' => ['recs6anTSWvsW3p9Q', 'reclIIAwI6hmdaBmo'],
         );*/
         log::info($data);
-        log::info($data['Image']);
-        $image = json_decode($data['Image']);
+        log::info($data['image_url']);
+        $image = $data['image_url'];
         log::info($image);
         log::info(gettype($image));
         //log::info($image[0]->url);
