@@ -33,6 +33,12 @@ class AlertController extends Controller
         );*/
         log::info($data['Contactos']);
         $contactos_ids = $data['Contactos'];
+        $contactos_ids = str_replace("['","", $contactos_ids);
+        $contactos_ids = str_replace("']","", $contactos_ids);
+        $contactos_ids = str_replace("'","", $contactos_ids);
+        $contactos_ids = str_replace(" ","", $contactos_ids);
+        $contactos_ids = explode(',',$contactos_ids);
+        return $contactos_ids;
         foreach($contactos_ids as $id){
             log::info($id);
             $contacto = Airtable::table('contactos')->find($id);
