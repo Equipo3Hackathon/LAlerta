@@ -35,7 +35,8 @@ class AlertController extends Controller
         log::info($data['Image']);
         $image = json_decode($data['Image'], JSON_UNESCAPED_SLASHES);
         log::info($image);
-        log::info($image[0]->url);
+        log::info(gettype($image));
+        //log::info($image[0]->url);
         return "OK";
         log::info($data['Contactos']);
         $contactos_ids = $data['Contactos'];
