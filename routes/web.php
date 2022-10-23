@@ -26,3 +26,4 @@ Route::any('/alert', [App\Http\Controllers\AlertController::class, 'index'])->na
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/api/alerts', [App\Http\Controllers\AirTableController::class, 'index'])->name('airtable.index');
 Route::get('/api/types', [App\Http\Controllers\AirTableController::class, 'types'])->name('airtable.types');
+Route::get('/api/actors', [App\Http\Controllers\AirTableController::class, 'actors'])->name('actors.types');

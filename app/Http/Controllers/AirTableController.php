@@ -18,4 +18,10 @@ class AirTableController extends Controller
         $types = Airtable::table('tipos')->get();
         return $types;
     }
+
+    public function actors()
+    {
+        $actores = Airtable::table('tipo_actor')->get();
+        return $actores;
+    }
 }

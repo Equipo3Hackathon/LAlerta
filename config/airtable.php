@@ -61,6 +61,10 @@ return [
             'name' => 'Contactos',
         ],
 
+        'tipo_actor' => [
+            'name' => 'Tipo Actor',
+        ],
+
     ],
 
     /*

@@ -29,12 +29,15 @@
         <div class="col-md-6">
             <div id="chart" style="width:100%; height:400px;"></div>
         </div>
+        <div class="col-md-6">
+            <div id="actores_chart" style="width:100%; height:400px;"></div>
+        </div>
     </div>
 </div>
 
 <script>
     window.onload = () => {
-        map = L.map('map').setView([51.505, -0.09], 13);
+        map = L.map('map').setView([4.624335, -74.063644], 5);
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -46,7 +49,7 @@
                 name = data[i].fields.Name;
                 geo = geo.split(',');
                 marker = L.marker([parseFloat(geo[0]), parseFloat(geo[1])]).addTo(map);
-                marker.bindPopup("<b>" + name + "</b>").openPopup();
+                marker.bindPopup("<b>" + name + "</b>");
             }
         })
     }
@@ -58,7 +61,9 @@
             count = []
             for(i in data){
                 categories.push(data[i].fields.Name)
-                count.push(data[i].fields.Alertas.length)
+                if(data[i].fields.Alertas != undefined){
+                    count.push(data[i].fields.Alertas.length)
+                }
             }
 
             const chart = Highcharts.chart('chart', {
@@ -67,6 +72,46 @@
                 },
                 title: {
                     text: 'Tipo de amenazas'
+                },
+                xAxis: {
+                    categories: categories
+                },
+                yAxis: {
+                    title: {
+                        text: 'Número de amenzas'
+                    }
+                },
+                series: [{
+                    name: 'Casos',
+                    data: count
+                }]
+            });
+        })
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $.get('/api/actors', (data) => {
+            categories = []
+            count = []
+            for(i in data){
+                categories.push(data[i].fields.Name)
+                if(data[i].fields.Alertas != undefined){
+                    serie_data = {
+                        name: data[i].fields.Name,
+                        y: data[i].fields.Alertas.length
+                    }
+                    count.push(serie_data)
+                    //count.push(data[i].fields.Alertas.length)
+                }
+            }
+
+            const chart = Highcharts.chart('actores_chart', {
+                chart: {
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Actores'
                 },
                 xAxis: {
                     categories: categories
