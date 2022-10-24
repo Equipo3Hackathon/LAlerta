@@ -1,6 +1,6 @@
 # LALerta
 
-[![VER VIDE](https://img.youtube.com/vi/039M0iz8Qhs/0.jpg)](https://www.youtube.com/watch?v=039M0iz8Qhs)
+[![VER VIDEO](https://img.youtube.com/vi/039M0iz8Qhs/0.jpg)](https://www.youtube.com/watch?v=039M0iz8Qhs)
 
 Click para ver video: https://www.youtube.com/watch?v=039M0iz8Qhs
 
@@ -14,6 +14,16 @@ Enlace publico: https://alertar.glideapp.io/
 
 ![VER QR](https://i.imgur.com/rwASssv.png)
 
+## Stack de la solución
+
+* Glideapp
+* Airtable
+* Twillio
+* Landbot
+* Laravel 8
+* Highcharts
+* Leftjs
+
 ## Modulos
 
 * Home
@@ -25,4 +35,16 @@ Enlace publico: https://alertar.glideapp.io/
 * Habla de tú salud (chatbot 🤖)
 * Mapa de riesgo
 
-## Herramientas de envio de aler
+## Proceso
+Abriri link public desde el téfono movil https://alertar.glideapp.io/ o por medio del QR
+
+### Pantalla de inicio
+Ingresar con Email o Gmail
+
+![](https://i.imgur.com/9X86eAF.jpg)
+
+![](https://i.imgur.com/iyNnC9G.jpg)
+
+### Completar perfil
+
+![](https://i.imgur.com/B40kMHP.jpg)
