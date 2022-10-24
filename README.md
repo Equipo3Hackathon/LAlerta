@@ -24,6 +24,7 @@ Enlace publico: https://alertar.glideapp.io/
 Enlace publico: http://alertar.herokuapp.com/
 
 Usuario: flip@gmail.com
+
 Contraseña: password
 
 ## Stack de la solución
