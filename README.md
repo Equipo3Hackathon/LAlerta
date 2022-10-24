@@ -19,7 +19,8 @@ Enlace publico: https://alertar.glideapp.io/
 
 ![VER QR](https://i.imgur.com/rwASssv.png)
 
-**Dashboard**
+## Dashboard
+
 Enlace publico: http://alertar.herokuapp.com/
 
 Usuario: flip@gmail.com
