@@ -19,11 +19,17 @@ Enlace publico: https://alertar.glideapp.io/
 
 ![VER QR](https://i.imgur.com/rwASssv.png)
 
+**Dashboard**
+Enlace publico: http://alertar.herokuapp.com/
+
+Usuario: flip@gmail.com
+Contraseña: password
+
 ## Stack de la solución
 
 * Glideapp
-* Airtable
-* Twillio
+* Airtable (base de datos)
+* Twillio (whatsapp & SMS)
 * Landbot
 * Laravel 8
 * Highcharts
@@ -49,7 +55,12 @@ Enlace publico: https://alertar.glideapp.io/
 
 **NOTA:** ESTE PROYECTO USA EL SANDBOX DE TWILLIO, QUIERE DECIR QUE LOS NUMERO DE CONTACTO DEBE ESTAR AUTORIZADOS PREVIAMENTE POR LA HERRAMIENTA
 
-### Pantalla de inicio
+## Dashboard
+El dashboard es una app con indicadores basicos en tiempo real
+
+![](https://i.imgur.com/NOIjLJC.png)
+
+## Imagenes
 
 ![](https://i.imgur.com/9X86eAF.jpg)
 
