@@ -8,6 +8,11 @@ Click para ver video: https://www.youtube.com/watch?v=039M0iz8Qhs
   
 Aquí pueden encontrar desde una caja de herramientas de consejos básicos antes de emprender un viaje para el trabajo de campo, un mapa de riesgo con las principales agresiones contra comunicadores en Colombia registradas por la Flip, acceso a recomendaciones de salud mental, hasta el direccionamiento al apoyo especializado en esa materia.
 
+## ¿Por qué la salud mental?
+La salud mental para periodistas es un tabú del que pocos hablan. Al no haber cifras que generen un reporte de la situación de periodistas que sufren procesos de riesgo emocional y mental tras hechos traumáticos, esta aplicación propone ir consolidando un compilado estadístico de la salud mental de los periodistas en Colombia. 
+
+![](https://i.ibb.co/X2xSvww/ezgif-com-gif-maker.gif)
+
 ## Ingreso a LAlerta
 
 Enlace publico: https://alertar.glideapp.io/
@@ -36,15 +41,23 @@ Enlace publico: https://alertar.glideapp.io/
 * Mapa de riesgo
 
 ## Proceso
-Abriri link public desde el téfono movil https://alertar.glideapp.io/ o por medio del QR
+* Abriri link public desde el téfono movil https://alertar.glideapp.io/ o por medio del QR
+* Ingresar con Email o Gmail
+* Completar perfil
+* Crear un contacto
+* Generar una alerta
+
+**NOTA:** ESTE PROYECTO USA EL SANDBOX DE TWILLIO, QUIERE DECIR QUE LOS NUMERO DE CONTACTO DEBE ESTAR AUTORIZADOS PREVIAMENTE POR LA HERRAMIENTA
 
 ### Pantalla de inicio
-Ingresar con Email o Gmail
 
 ![](https://i.imgur.com/9X86eAF.jpg)
 
 ![](https://i.imgur.com/iyNnC9G.jpg)
 
-### Completar perfil
-
 ![](https://i.imgur.com/B40kMHP.jpg)
+
+![](https://i.imgur.com/AlRqZis.jpg)
+
+![](https://i.imgur.com/YVHHYJW.jpg)
+
